@@ -17,7 +17,7 @@ class LoginFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // 
+        //
         val view = inflater.inflate(R.layout.login_fragment, container, false)
         var loginButton = view.findViewById<Button>(R.id.login_button)
         loginButton.setOnClickListener(onLoginClick)
