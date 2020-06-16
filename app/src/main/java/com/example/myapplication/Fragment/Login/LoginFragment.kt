@@ -26,5 +26,6 @@ class LoginFragment : BaseFragment() {
 
     val onLoginClick = View.OnClickListener {
         replaceFragment(HomeFragment())
+        
     }
 }
