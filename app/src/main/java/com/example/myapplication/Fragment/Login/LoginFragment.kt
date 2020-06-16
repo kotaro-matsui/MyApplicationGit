@@ -41,6 +41,7 @@ class LoginFragment : BaseFragment() {
     }
 
     val onLoginClick = View.OnClickListener {
+<<<<<<< HEAD
 
         if (user_id.text.toString() == "" || password.text.toString() == "") {
             val emptyError = EmptyErrorDialogFragment()
@@ -59,6 +60,10 @@ class LoginFragment : BaseFragment() {
                 }
             }
         }
+=======
+        replaceFragment(HomeFragment())
+        
+>>>>>>> BKS-2
     }
 
     val onForgetPasswordClick = View.OnClickListener {
