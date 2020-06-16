@@ -17,13 +17,19 @@
             android:background="@color/colorPrimary"
             android:gravity="center">
 
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity=""
+                android:src="@drawable/header_logo"/>
+
             <TextView
                 android:id="@+id/header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ヘッダー"
-                android:textSize="30dp"
-                android:textColor="@color/white"/>
+                android:text="塾座席表アプリ"
+                android:textSize="20dp"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
