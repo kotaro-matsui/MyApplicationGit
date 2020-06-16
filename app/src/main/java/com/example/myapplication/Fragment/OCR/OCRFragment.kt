@@ -27,7 +27,6 @@ class OCRFragment : BaseFragment() {
         // これだけで読み取ったテキストを取得できる
         val recognizedText = baseApi.utF8Text
         baseApi.end()
-//        abc
         return view
     }
 }
