@@ -3,7 +3,10 @@ package com.example.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import androidx.fragment.app.Fragment
+import com.example.myapplication.Fragment.InitialSetting.InitialSettingFragment
 import com.example.myapplication.Fragment.Login.LoginFragment
 import com.example.myapplication.Model.ListObject
 import io.realm.Realm
@@ -13,6 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
 
         //keyを設定
         val ids =  arrayOf(1, 2, 3, 4)
@@ -50,6 +54,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         setContentView(R.layout.activity_main)
+        var backButton = findViewById<Button>(R.id.back_fragment)
+        backButton.setOnClickListener(onBackView)
 
         replaceFragment(LoginFragment())
     }
@@ -61,9 +67,22 @@ class MainActivity : AppCompatActivity() {
 //   }
 
     fun replaceFragment(fragment: Fragment) {
+        this.mFragment = fragment
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.container_base, fragment)
         fragmentTransaction.commit()
     }
+
+
+    var mFragment: Fragment? = null
+
+    val onBackView = View.OnClickListener {
+        if(this.mFragment is InitialSettingFragment){
+            replaceFragment(LoginFragment())
+        }
+
+    }
+
+
 }
