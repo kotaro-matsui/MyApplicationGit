@@ -10,7 +10,7 @@ class MistakeErrorDialogFragment: DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val builder = AlertDialog.Builder(activity)
         builder.setTitle("ログインエラー②")
-            .setMessage("IDかパスワードが間違っています")
+            .setMessage("入力した内容が間違っています")
             .setPositiveButton("OK") { dialog, id ->
                 println("dialog:$dialog which:$id")
             }

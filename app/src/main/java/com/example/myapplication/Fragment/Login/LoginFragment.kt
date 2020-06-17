@@ -29,8 +29,8 @@ class LoginFragment : BaseFragment() {
         val view = inflater.inflate(R.layout.login_fragment, container, false)
         var initialSetting = view.findViewById<TextView>(R.id.initial_setting)
         initialSetting.setOnClickListener(onInitialSettingClick)
-        var studentLoginButton = view.findViewById<Button>(R.id.login)
-        studentLoginButton.setOnClickListener(onLoginClick)
+        var loginButton = view.findViewById<Button>(R.id.login)
+        loginButton.setOnClickListener(onLoginClick)
         var forgetPasswordText = view.findViewById<TextView>(R.id.forget_password)
         forgetPasswordText.setOnClickListener(onForgetPasswordClick)
         return view

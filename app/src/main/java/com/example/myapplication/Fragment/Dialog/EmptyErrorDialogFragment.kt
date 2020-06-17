@@ -10,8 +10,8 @@ class EmptyErrorDialogFragment: DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val builder = AlertDialog.Builder(activity)
-        builder.setTitle("ログインエラー①")
-            .setMessage("IDかパスワードが入力されていません")
+        builder.setTitle("入力エラー①")
+            .setMessage("空欄があります")
             .setPositiveButton("OK") { dialog, id ->
                 println("dialog:$dialog which:$id")
             }
