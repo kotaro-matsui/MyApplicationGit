@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.TextView
 import com.example.myapplication.Context.OCRUtil
 import com.example.myapplication.Fragment.BaseFragment
+import com.example.myapplication.Fragment.Dialog.ProgressDialog
 import com.example.myapplication.Fragment.Home.TeacherHomeFragment
 import com.example.myapplication.Fragment.Login.LoginFragment
 import com.example.myapplication.Fragment.OCR.OCRFragment
@@ -18,9 +19,12 @@ import io.realm.Realm
 
 class LessonFragment : BaseFragment() {
     private lateinit var realm: Realm
+    private val progressDialog = ProgressDialog.newInstance("文字を読み取っています")
 
     var lessonName = ""
     var lessonNum = 1
+
+
 
     companion object {
         fun newInstance(lessonName: String, lessonNum: Int): LessonFragment {
@@ -53,19 +57,23 @@ class LessonFragment : BaseFragment() {
         val subject = seatInfo?.subject
         val subjectTextView = view.findViewById<TextView>(R.id.subject)
         subjectTextView.text = subject
-        var teacherHomeButton = view.findViewById<Button>(R.id.teacher_home_button)
-        teacherHomeButton.setOnClickListener(onTeacherHomeClick)
+//        var teacherHomeButton = view.findViewById<Button>(R.id.teacher_home_button)
+//        teacherHomeButton.setOnClickListener(onTeacherHomeClick)
         var qrCodeScannerButton = view.findViewById<Button>(R.id.start_qr_code_scanner)
         qrCodeScannerButton.setOnClickListener(onQrCodeScannerButton)
         return view
     }
 
-    val onTeacherHomeClick = View.OnClickListener {
-        replaceFragment(TeacherHomeFragment())
-    }
+//    val onTeacherHomeClick = View.OnClickListener {
+//        transitionPage(TeacherHomeFragment())
+//        changeTitle("HOME")
+//    }
 
     val onQrCodeScannerButton = View.OnClickListener {
-        replaceFragment(OCRFragment())
+        progressDialog.show(activity!!.supportFragmentManager,"TAG")
+        progressDialog.dismiss()
+        transitionPage(OCRFragment())
+        changeTitle("OCRテスト")
     }
 
 }

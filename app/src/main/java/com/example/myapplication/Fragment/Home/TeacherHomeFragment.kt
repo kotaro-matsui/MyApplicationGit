@@ -41,7 +41,8 @@ class TeacherHomeFragment : BaseFragment() {
     }
 
     val onLogoutClick = View.OnClickListener {
-        replaceFragment(LoginFragment())
+        transitionPage(LoginFragment())
+        changeTitle("ログイン")
     }
 
     val onLessonClick = View.OnClickListener {
@@ -71,12 +72,14 @@ class TeacherHomeFragment : BaseFragment() {
             }
         }
 
-        replaceFragment(LessonFragment.newInstance(lessonName, lessonNum))
+        transitionPage(LessonFragment.newInstance(lessonName, lessonNum))
+        changeTitle("授業")
 
     }
 
     val onNextTimetableClick = View.OnClickListener {
         var user = "teacher"
-        replaceFragment(NextTimetableFragment.newInstance(user))
+        transitionPage(NextTimetableFragment.newInstance(user))
+        changeTitle("次の授業")
     }
 }

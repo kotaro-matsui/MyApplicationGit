@@ -37,13 +37,17 @@ class NextTimetableFragment : BaseFragment() {
         return view
     }
 
-    val onHomeClick = View.OnClickListener{
-        if (user == "student")
-            replaceFragment(StudentHomeFragment())
-        else if(user == "teacher")
-            replaceFragment(TeacherHomeFragment())
-        else
-            replaceFragment(LoginFragment())
+    val onHomeClick = View.OnClickListener {
+        if (user == "student") {
+            transitionPage(StudentHomeFragment())
+            changeTitle("HOME")
+        } else if (user == "teacher") {
+            transitionPage(TeacherHomeFragment())
+            changeTitle("HOME")
+        } else {
+            transitionPage(LoginFragment())
+            changeTitle("ログイン")
+        }
     }
 
 }

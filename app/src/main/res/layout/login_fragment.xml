@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/shape_rounded_corners_10dp"
+        android:backgroundTint="@color/colorPrimary"
         android:layout_marginTop="100dp"
         android:layout_marginBottom="50dp"
         android:layout_marginLeft="50dp"
@@ -17,20 +18,11 @@
         android:orientation="vertical"
         android:layout_gravity="center">
 
-        <TextView
-        android:id="@+id/initial_setting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="初回設定はこちら"
-        android:textColor="@color/colorPrimary"
-        android:textSize="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center_horizontal"/>
-
         <EditText
             android:id="@+id/user_id"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:background="@drawable/white_shape_rounded_corners_10dp"
             android:inputType="number"
             android:maxLength="10"
             android:maxLines="1"
@@ -38,36 +30,50 @@
             android:layout_marginTop="30dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:hint="ID" />
+            android:hint=" ID" />
 
         <EditText
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:background="@drawable/white_shape_rounded_corners_10dp"
             android:inputType="textPassword"
             android:maxLines="1"
             android:singleLine="true"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:hint="パスワード" />
+            android:hint=" パスワード" />
 
         <Button
             android:id="@+id/login"
-            android:text="ログイン"
-            android:layout_width="150dp"
+            android:layout_width="180dp"
             android:layout_height="50dp"
-            android:background="@drawable/shape_rounded_corners_10dp"
-            android:layout_marginTop="30dp"
+            android:background="@drawable/white_shape_rounded_corners_10dp"
+            android:text="ログイン"
+            android:textSize="30dp"
+            android:layout_marginTop="20dp"
             android:layout_gravity="center_horizontal"/>
 
         <TextView
             android:id="@+id/forget_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="パスワードを忘れたときはこちら"
+            android:text="パスワードをお忘れの方はこちら"
             android:textSize="15dp"
-            android:layout_marginBottom="15dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/initial_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="初回設定はこちら"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:layout_gravity="center_horizontal"/>
 
     </LinearLayout>

@@ -23,12 +23,8 @@ class OCRFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.ocr_fragment, container, false)
-        val bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.apex)
+        val bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.test)
         ocrUtil = OCRUtil(activity!!.applicationContext)
-        // contextは「このアプリケーションだよ！という証明書」のイメージ
-        // 一時的なものと永続的なものがあるが、証明さえできればいいのでどっちかをもってこれたらよい
-        // 持ってこれさえすればいい、みたいなものなので、無理やり持ってくる手段を覚えておこう
-        // 今回のactivity!!.applicationContextがそれ
         val copyText = ocrUtil.getString(activity!!.applicationContext, bitmap, "jpnnew")
         val imgTextView = view.findViewById<TextView>(R.id.img_text)
         imgTextView.text = copyText
@@ -39,6 +35,7 @@ class OCRFragment : BaseFragment() {
     }
 
     val onTeacherHomeClick = View.OnClickListener {
-        replaceFragment(TeacherHomeFragment())
+        transitionPage(TeacherHomeFragment())
+        changeTitle("HOME")
     }
 }

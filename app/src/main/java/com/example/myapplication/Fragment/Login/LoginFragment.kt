@@ -1,6 +1,5 @@
 package com.example.myapplication.Fragment.Login
 
-import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,9 +7,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import com.example.myapplication.Fragment.BaseFragment
-import com.example.myapplication.Fragment.Dialog.EmptyErrorDialogFragment
-import com.example.myapplication.Fragment.Dialog.InformationDialogFragment
-import com.example.myapplication.Fragment.Dialog.MistakeErrorDialogFragment
+import com.example.myapplication.Fragment.Dialog.ConfirmationDialogFragment
+import com.example.myapplication.Fragment.Dialog.ErrorDialogFragment
 import com.example.myapplication.Fragment.Home.StudentHomeFragment
 import com.example.myapplication.Fragment.Home.TeacherHomeFragment
 import com.example.myapplication.Fragment.InitialSetting.InitialSettingFragment
@@ -37,23 +35,26 @@ class LoginFragment : BaseFragment() {
     }
 
     val onInitialSettingClick = View.OnClickListener {
-        replaceFragment(InitialSettingFragment())
+        transitionPage(InitialSettingFragment())
+        changeTitle("初回設定")
     }
 
     val onLoginClick = View.OnClickListener {
         if (user_id.text.toString() == "" || password.text.toString() == "") {
-            val emptyError = EmptyErrorDialogFragment()
+            val emptyError = ErrorDialogFragment.newInstance("入力エラー", "IDとパスワードは必ず入力して下さい")
             emptyError.show(activity!!.supportFragmentManager, "empty")
         } else {
             when (user_id.text.toString()) {
                 "0" -> {
-                    replaceFragment(TeacherHomeFragment())
+                    transitionPage(TeacherHomeFragment())
+                    changeTitle("HOME")
                 }
                 "1" -> {
-                    replaceFragment(StudentHomeFragment())
+                    transitionPage(StudentHomeFragment())
+                    changeTitle("HOME")
                 }
                 else -> {
-                    val mistakeError = MistakeErrorDialogFragment()
+                    val mistakeError = ErrorDialogFragment.newInstance("入力エラー", "IDは0（講師用）か1（生徒用）で入力して下さい")
                     mistakeError.show(activity!!.supportFragmentManager, "mistake")
                 }
             }
@@ -61,8 +62,8 @@ class LoginFragment : BaseFragment() {
     }
 
     val onForgetPasswordClick = View.OnClickListener {
-        val dialog = InformationDialogFragment()
-        dialog.show(activity!!.supportFragmentManager, "info")
+        val infoDialog = ErrorDialogFragment.newInstance("教室の先生に相談しましょう", "総合連絡先：XXX-XXXX-XXX")
+        infoDialog.show(activity!!.supportFragmentManager, "info")
     }
 
 

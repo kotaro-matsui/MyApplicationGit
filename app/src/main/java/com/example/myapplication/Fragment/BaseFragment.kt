@@ -5,10 +5,26 @@ import com.example.myapplication.MainActivity
 
 open class BaseFragment: Fragment() {
 
-    fun replaceFragment(fragment: Fragment) {
-        // activity→今どのアクティビティに乗っているかをとってきて、そのスーパークラスを示す
-        //　明示しておく必要があるので、キャスト（as）でそれを記載
+//    fun replaceFragment(fragment: Fragment) {
+////        // activity→今どのアクティビティに乗っているかをとってきて、そのスーパークラスを示す
+////        //　明示しておく必要があるので、キャスト（as）でそれを記載
+//        val main = activity as MainActivity
+//        main.replaceFragment(fragment)
+//    }
+//
+//    fun switchBackFragment(fragment: Fragment) {
+//        val main = activity as MainActivity
+//        main.switchBackButton(fragment)
+//    }
+
+    fun changeTitle(headerTitle: String) {
         val main = activity as MainActivity
-        main.replaceFragment(fragment)
+        main.changeTitle(headerTitle)
     }
+
+    fun transitionPage(fragment: Fragment) {
+        val main = activity as MainActivity
+        main.transitionPage(fragment)
+    }
+
 }
