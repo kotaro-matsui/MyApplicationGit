@@ -5,7 +5,6 @@ import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
 import androidx.fragment.app.DialogFragment
-import com.example.myapplication.Fragment.Lesson.LessonFragment
 
 class ErrorDialogFragment: DialogFragment() {
     var alertTitle = ""
@@ -24,7 +23,7 @@ class ErrorDialogFragment: DialogFragment() {
         val builder = AlertDialog.Builder(activity)
         builder.setTitle(alertTitle)
             .setMessage(alertMessage)
-            .setPositiveButton("OK") { dialog, id ->
+            .setPositiveButton("OK") { _, _ ->
                 this.dismiss()
             }
 

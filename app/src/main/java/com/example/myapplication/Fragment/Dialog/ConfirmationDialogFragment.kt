@@ -2,10 +2,7 @@ package com.example.myapplication.Fragment.Dialog
 
 import android.app.AlertDialog
 import android.app.Dialog
-import android.content.DialogInterface
 import android.os.Bundle
-import android.view.View
-import android.widget.ExpandableListView
 import androidx.fragment.app.DialogFragment
 
 class ConfirmationDialogFragment: DialogFragment() {
@@ -29,14 +26,13 @@ class ConfirmationDialogFragment: DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val builder = AlertDialog.Builder(activity)
-        var isOkClick : Boolean = false
             builder.setTitle(confirmationTitle)
             .setMessage(confirmationMessage)
-            .setPositiveButton("OK") { dialog, which ->
+            .setPositiveButton("OK") { _, _ ->
                 this.dismiss()
                 onClickOkListener!!.onClickOk()
-    }
-            .setNegativeButton("Cancel") { dialog, which ->
+            }
+            .setNegativeButton("Cancel") { _, _ ->
                 this.dismiss()
             }
 

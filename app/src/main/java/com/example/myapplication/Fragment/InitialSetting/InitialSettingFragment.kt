@@ -20,14 +20,16 @@ class InitialSettingFragment : BaseFragment() , ConfirmationDialogFragment.Confi
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        changeTitle("初回設定")
+        switchBackFragment(this)
         val view = inflater.inflate(R.layout.initial_setting_fragment, container, false)
-        var entryButton = view.findViewById<Button>(R.id.entry_button)
+        val entryButton = view.findViewById<Button>(R.id.entry_button)
        entryButton.setOnClickListener(onEntryClick)
 
         return view
     }
 
-    val onEntryClick = View.OnClickListener {
+    private val onEntryClick = View.OnClickListener {
         val entryConfirmation = ConfirmationDialogFragment.newInstance("登録", "この情報で登録しますか？", this)
         entryConfirmation.show(activity!!.supportFragmentManager, "entry")
     }
@@ -40,8 +42,7 @@ class InitialSettingFragment : BaseFragment() , ConfirmationDialogFragment.Confi
             val mistakeError = ErrorDialogFragment.newInstance("入力エラー", "新しいパスワードと確認用のパスワードが異なっています")
             mistakeError.show(activity!!.supportFragmentManager, "mistake")
         } else {
-            transitionPage(LoginFragment())
-            changeTitle("ログイン")
+            replaceFragment(LoginFragment())
         }
     }
 }

@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="必要事項を記入してください"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:textColor="@color/white"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"/>
@@ -99,7 +99,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/white_shape_rounded_corners_10dp"
             android:text="登録"
-            android:textSize="30dp"
+            android:textSize="30sp"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="30dp"
             android:layout_gravity="center_horizontal"/>

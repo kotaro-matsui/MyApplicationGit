@@ -84,7 +84,7 @@ class OCRUtil(context: Context) {
                 fun getLangType(str: String): LangType {
                     val types = LangType.values()
                     for (type in types) {
-                        if (type.str.equals(str)) {
+                        if (type.str == str) {
                             return type
                         }
                     }
