@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     private var mFragment: Fragment? = null
     private var backButton: Button? = null
     private var headerTitle: TextView? = null
+    private var menuButton: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,6 +70,11 @@ class MainActivity : AppCompatActivity() {
         backButton.setOnClickListener(onBackView)
         this.backButton = backButton
 
+        val menuButton = findViewById<Button>(R.id.menu_fragment)
+        menuButton.visibility = View.INVISIBLE
+        menuButton.setOnClickListener(onMenuView)
+        this.menuButton = menuButton
+
         val headerTitle = findViewById<TextView>(R.id.header)
         this.headerTitle = headerTitle
 
@@ -90,11 +96,21 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.commit()
     }
 
+    //戻るボタンの表示非表示切り替え
     fun switchBackButton(fragment: Fragment) {
-        if(fragment is LoginFragment) {
+        if(fragment is LoginFragment || fragment is TeacherHomeFragment || fragment is StudentHomeFragment) {
             this.backButton?.visibility = View.INVISIBLE
         } else {
             this.backButton?.visibility = View.VISIBLE
+        }
+    }
+
+    //設定ボタンの表示非表示切り替え
+    fun switchMenuButton(fragment: Fragment) {
+        if(fragment is LoginFragment) {
+            this.menuButton?.visibility = View.INVISIBLE
+        } else {
+            this.menuButton?.visibility = View.VISIBLE
         }
     }
 
@@ -105,8 +121,6 @@ class MainActivity : AppCompatActivity() {
     private val onBackView = View.OnClickListener {
         when(this.mFragment){
             is InitialSettingFragment -> replaceFragment(LoginFragment())
-            is StudentHomeFragment -> replaceFragment(LoginFragment())
-            is TeacherHomeFragment -> replaceFragment(LoginFragment())
             is LessonFragment  -> replaceFragment(TeacherHomeFragment())
             is OCRFragment -> replaceFragment(TeacherHomeFragment())
             else -> {
@@ -115,4 +129,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private val onMenuView = View.OnClickListener {
+        //スライドメニューを表示する処理
+    }
 }

@@ -21,6 +21,7 @@ class StudentHomeFragment : BaseFragment() {
     ): View? {
         changeTitle("HOME")
         switchBackFragment(this)
+        switchMenuFragment(this)
         val view = inflater.inflate(R.layout.student_home_fragment, container, false)
         val data = "QRコード" //ここに生徒名をいれてQRコードを作る想定
         val size = 200

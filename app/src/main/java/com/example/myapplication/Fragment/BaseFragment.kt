@@ -17,6 +17,11 @@ open class BaseFragment: Fragment() {
         main.switchBackButton(fragment)
     }
 
+    fun switchMenuFragment(fragment: Fragment){
+        val main = activity as MainActivity
+        main.switchMenuButton(fragment)
+    }
+
     fun changeTitle(headerTitle: String) {
         val main = activity as MainActivity
         main.changeTitle(headerTitle)
