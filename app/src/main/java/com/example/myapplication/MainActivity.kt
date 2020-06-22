@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.fragment.app.Fragment
 import com.example.myapplication.Fragment.Home.StudentHomeFragment
 import com.example.myapplication.Fragment.Home.TeacherHomeFragment
@@ -87,7 +88,7 @@ class MainActivity : AppCompatActivity() {
 
 //       realm.close()
 //   }
-
+    
     // 以下、ページ遷移に関するメソッド
 
     // 画面遷移先を決定するメソッド

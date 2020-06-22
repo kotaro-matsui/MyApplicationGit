@@ -1,11 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:windowNoTitle="true">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="メニューテスト"/>
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:background="@drawable/rounded_bottom_right_corner"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:text="設定メニュー"
+        android:textSize="30sp"
+        android:textColor="@color/colorPrimary"
+        android:gravity="center"/>
+
+    <Button
+        android:layout_width="285dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_bottom_right_corner"
+        android:backgroundTint="@color/white"
+        android:text="次回のスケジュール"
+        android:textSize="30sp"
+        android:textColor="@color/colorPrimary"
+        android:gravity="center"/>
+
+    <Button
+        android:layout_width="285dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_bottom_right_corner"
+        android:backgroundTint="@color/white"
+        android:text="教室マップ"
+        android:textSize="30sp"
+        android:textColor="@color/colorPrimary"
+        android:gravity="center"/>
+
+    <Button
+        android:layout_width="285dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_bottom_right_corner"
+        android:backgroundTint="@color/white"
+        android:text="アプリの使い方"
+        android:textSize="30sp"
+        android:textColor="@color/colorPrimary"
+        android:gravity="center"/>
+
+    <Button
+        android:layout_width="285dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_bottom_right_corner"
+        android:backgroundTint="@color/white"
+        android:text="ユーザー情報設定"
+        android:textSize="30sp"
+        android:textColor="@color/colorPrimary"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/rounded_top_right_corner"
+        android:backgroundTint="@color/colorPrimaryDark">
+
+        <Button
+            android:layout_width="290dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_top_right_corner"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="ログアウト"
+            android:textSize="30sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Version 0.1.0"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="25dp"/>
+
+    </LinearLayout>
 
 </LinearLayout>

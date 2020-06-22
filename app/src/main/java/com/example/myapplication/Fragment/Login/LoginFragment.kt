@@ -1,6 +1,7 @@
 package com.example.myapplication.Fragment.Login
 
 import android.os.Bundle
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -66,8 +67,7 @@ class LoginFragment : BaseFragment() {
     }
 
     private val onMenuTestClick = View.OnClickListener {
-        val menuDialog = MenuDialogFragment()
-        menuDialog.show(activity!!.supportFragmentManager, "info")
+        MenuDialogFragment(Gravity.LEFT or Gravity.TOP, 0f, 0f).show(activity!!.supportFragmentManager, "info")
     }
 
     private val onForgetPasswordClick = View.OnClickListener {
