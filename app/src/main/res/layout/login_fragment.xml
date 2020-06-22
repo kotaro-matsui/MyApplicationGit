@@ -8,46 +8,66 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/shape_rounded_corners_10dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginBottom="150dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="50dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:orientation="vertical"
         android:layout_gravity="center">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="サブタイトル"
-            android:textSize="20dp"
-            android:textColor="@color/black"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="30dp"/>
+        android:id="@+id/initial_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="初回設定はこちら"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"/>
 
         <EditText
+            android:id="@+id/user_id"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="50dp"
+            android:inputType="number"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:singleLine="true"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"/>
+            android:layout_marginRight="10dp"
+            android:hint="ID" />
 
         <EditText
+            android:id="@+id/password"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginTop="30dp"
+            android:layout_height="50dp"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"/>
-
+            android:layout_marginRight="10dp"
+            android:hint="パスワード" />
 
         <Button
-            android:id="@+id/login_button"
-            android:text="ボタン"
+            android:id="@+id/login"
+            android:text="ログイン"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:background="@drawable/shape_rounded_corners_10dp"
             android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/forget_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="パスワードを忘れたときはこちら"
+            android:textSize="15dp"
+            android:layout_marginBottom="15dp"
             android:layout_gravity="center_horizontal"/>
 
     </LinearLayout>

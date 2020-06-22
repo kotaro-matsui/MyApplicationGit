@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/lesson_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:id="@+id/teacher_home_button"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:text="HOME"
+        android:textSize="15dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="ブース"
+    android:textSize="30dp" android:layout_marginTop="50dp"
+    android:textColor="@color/colorPrimary"
+    android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/booth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ブース名"
+        android:textSize="20dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="講師"
+        android:textSize="30dp"
+        android:textColor="@color/colorPrimary"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/teacher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="講師名"
+        android:textSize="20dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="生徒"
+        android:textSize="30dp"
+        android:textColor="@color/colorPrimary"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/student"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="生徒名"
+        android:textSize="20dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="教科"
+        android:textSize="30dp"
+        android:textColor="@color/colorPrimary"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/subject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="教科名"
+        android:textSize="20dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:id="@+id/start_qr_code_scanner"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary"
+        android:text="QRコードを読み取る"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="150dp"
+        android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>
