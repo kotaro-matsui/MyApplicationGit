@@ -29,8 +29,14 @@ class TeacherHomeFragment : BaseFragment() {
         thirdLessonButton.setOnClickListener(onLessonClick)
         val fourthLessonButton = view.findViewById<Button>(R.id.fourth_lesson_button)
         fourthLessonButton.setOnClickListener(onLessonClick)
-        val nextTimetableButton= view.findViewById<Button>(R.id.next_timetable_button)
-        nextTimetableButton.setOnClickListener(onNextTimetableClick)
+/*        val nextTimetableButton= view.findViewById<Button>(R.id.next_timetable_button)
+        nextTimetableButton.setOnClickListener(onNextTimetableClick)*/
+        val fifthLessonButton = view.findViewById<Button>(R.id.fifth_lesson_button)
+        fifthLessonButton.setOnClickListener(onLessonClick)
+        val sixthLessonButton = view.findViewById<Button>(R.id.sixth_lesson_button)
+        sixthLessonButton.setOnClickListener(onLessonClick)
+        val seventhLessonButton = view.findViewById<Button>(R.id.seventh_lesson_button)
+        seventhLessonButton.setOnClickListener(onLessonClick)
 
         return view
     }
@@ -56,6 +62,18 @@ class TeacherHomeFragment : BaseFragment() {
             R.id.fourth_lesson_button -> {
                 lessonName = "４コマ目の授業"
                 lessonNum = 4
+            }
+            R.id.fifth_lesson_button -> {
+                lessonName = "５コマ目の授業"
+                lessonNum = 5
+            }
+            R.id.sixth_lesson_button -> {
+                lessonName = "６コマ目の授業"
+                lessonNum = 6
+            }
+            R.id.seventh_lesson_button -> {
+                lessonName = "７コマ目の授業"
+                lessonNum = 7
             }
             else -> {
                 lessonName = "Error"

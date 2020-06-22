@@ -43,6 +43,7 @@ class LessonFragment : BaseFragment() {
         val lessonNameTextView = view.findViewById<TextView>(R.id.lesson_name)
         lessonNameTextView.text = lessonName
         realm = Realm.getDefaultInstance()
+        //ここでrealmの中身が無い場合は各コマへのボタンをグレーアウトにする処理にする
         val seatInfo = realm.where(ListObject::class.java).equalTo("id", lessonNum).findFirst()
         val booth = seatInfo?.booth
         val boothTextView = view.findViewById<TextView>(R.id.booth)

@@ -22,7 +22,7 @@ class MenuDialogFragment : DialogFragment() {
             )
             it.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
         }
-        dialog.setContentView(R.layout.menu_dialog_fragment)
+        /*dialog.setContentView(R.layout.menu_dialog_fragment)*/
             //クリック時実行したい処理を記述
             //動作デモではここでChromeCustomTabを開いています。
         return dialog

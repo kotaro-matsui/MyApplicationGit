@@ -3,6 +3,7 @@ package com.example.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
@@ -30,15 +31,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         //keyを設定
-        val ids =  arrayOf(1, 2, 3, 4)
+        val ids =  arrayOf(1, 2, 3, 4,5,6,7)
         //initしたインスタンスをとってくる
         realm = Realm.getDefaultInstance()
-
         // トランザクションして登録
         try {
             realm.executeTransaction { realm ->
                 val obj1 = realm.createObject(ListObject::class.java, ids[0])
-                obj1.booth = "A1"
+                obj1.booth = "A10"
                 obj1.teacher = "松井"
                 obj1.student = "実原"
                 obj1.subject = "国語"
@@ -57,11 +57,17 @@ class MainActivity : AppCompatActivity() {
                 obj4.teacher = "松井"
                 obj4.student = "渕田"
                 obj4.subject = "物理"
+                val obj5 = realm.createObject(ListObject::class.java, ids[4])
+                obj5.booth = "A2"
+                obj5.teacher = "明石"
+                obj5.student = "渕田"
+                obj5.subject = "物理"
+
             }
         } catch (e: Exception) {
-
+            println("exceptionエラー:" + e.message)
         } catch (r: RuntimeException) {
-
+            println("runtime exceptionエラー:" + r.message)
         }
 
         setContentView(R.layout.activity_main)
@@ -82,11 +88,10 @@ class MainActivity : AppCompatActivity() {
         replaceFragment(LoginFragment())
     }
 
-//    override fun onDestroy() {
-//       super.onDestroy()
-
-//       realm.close()
-//   }
+    override fun onDestroy() {
+       super.onDestroy()
+       realm.close()
+   }
 
     // 以下、ページ遷移に関するメソッド
 

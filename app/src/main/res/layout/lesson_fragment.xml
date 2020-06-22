@@ -18,69 +18,83 @@
 <!--        android:textSize="15dp"-->
 <!--        android:layout_gravity="center_horizontal"/>-->
 
-    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="ブース"
-    android:textSize="30dp" android:layout_marginTop="50dp"
-    android:textColor="@color/colorPrimary"
-    android:layout_gravity="center_horizontal"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rounded_corners_10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical"
+        android:layout_gravity="center">
 
-    <TextView
-        android:id="@+id/booth"
+        <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ブース名"
-        android:textSize="20dp"
-        android:layout_gravity="center_horizontal"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="講師"
-        android:textSize="30dp"
+        android:text="ブース"
+        android:textSize="30dp" android:layout_marginTop="50dp"
         android:textColor="@color/colorPrimary"
         android:layout_gravity="center_horizontal"/>
 
-    <TextView
-        android:id="@+id/teacher"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="講師名"
-        android:textSize="20dp"
-        android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/booth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ブース名"
+            android:textSize="20dp"
+            android:layout_gravity="center_horizontal"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="生徒"
-        android:textSize="30dp"
-        android:textColor="@color/colorPrimary"
-        android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="講師"
+            android:textSize="30dp"
+            android:textColor="@color/colorPrimary"
+            android:layout_gravity="center_horizontal"/>
 
-    <TextView
-        android:id="@+id/student"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="生徒名"
-        android:textSize="20dp"
-        android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="講師名"
+            android:textSize="20dp"
+            android:layout_gravity="center_horizontal"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="教科"
-        android:textSize="30dp"
-        android:textColor="@color/colorPrimary"
-        android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="生徒"
+            android:textSize="30dp"
+            android:textColor="@color/colorPrimary"
+            android:layout_gravity="center_horizontal"/>
 
-    <TextView
-        android:id="@+id/subject"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="教科名"
-        android:textSize="20dp"
-        android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/student"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="生徒名"
+            android:textSize="20dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="教科"
+            android:textSize="30dp"
+            android:textColor="@color/colorPrimary"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/subject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="教科名"
+            android:textSize="20dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="60dp"/>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/start_qr_code_scanner"
