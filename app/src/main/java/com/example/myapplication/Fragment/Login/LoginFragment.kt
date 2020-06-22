@@ -25,6 +25,7 @@ class LoginFragment : BaseFragment() {
     ): View? {
         changeHeaderTitle("ログイン")
         switchBackFragment(this)
+
         val view = inflater.inflate(R.layout.login_fragment, container, false)
         val initialSetting = view.findViewById<TextView>(R.id.initial_setting)
         initialSetting.setOnClickListener(onInitialSettingClick)

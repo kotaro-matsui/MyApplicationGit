@@ -21,6 +21,7 @@ class StudentHomeFragment : BaseFragment() {
     ): View? {
         changeHeaderTitle("HOME")
         switchBackFragment(this)
+        switchMenuFragment(this)
         val view = inflater.inflate(R.layout.student_home_fragment, container, false)
 
         // QRコードの作成
