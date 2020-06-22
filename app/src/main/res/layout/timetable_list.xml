@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -8,35 +9,41 @@
         android:id="@+id/time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0時間目 0：00～23：59"/>
+        android:text="aiueo"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        tools:ignore="SmallSp" />
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:orientation="horizontal">
 
         <TextView
             android:id="@+id/booth"
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:textSize="20sp"
-            android:text="３文字"/>
+            android:layout_weight="1"
+            android:text="aiueo"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/subject"
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:textSize="20sp"
-            android:text="３文字"/>
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/teacher"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="match_parent"
-            android:layout_weight="4"
-            android:textSize="20sp"
-            android:text="担当：６６６６文字"/>
+            android:layout_weight="3"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
     </LinearLayout>
 </LinearLayout>

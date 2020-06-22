@@ -1,22 +1,17 @@
 package com.example.myapplication.Fragment.Login
 
-import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
 import com.example.myapplication.Fragment.BaseFragment
 import com.example.myapplication.Fragment.Dialog.ErrorDialogFragment
 import com.example.myapplication.Fragment.Home.StudentHomeFragment
 import com.example.myapplication.Fragment.Home.TeacherHomeFragment
 import com.example.myapplication.Fragment.InitialSetting.InitialSettingFragment
-import com.example.myapplication.Fragment.ListTest.ListTestFragment
 import com.example.myapplication.R
-import com.google.zxing.BarcodeFormat
-import com.journeyapps.barcodescanner.BarcodeEncoder
 import kotlinx.android.synthetic.main.login_fragment.*
 
 
@@ -34,10 +29,6 @@ class LoginFragment : BaseFragment() {
         initialSetting.setOnClickListener(onInitialSettingClick)
         val loginButton = view.findViewById<Button>(R.id.login)
         loginButton.setOnClickListener(onLoginClick)
-
-//        リストのテスト用
-        var listButton = view.findViewById<Button>(R.id.list_view)
-        listButton.setOnClickListener(onListClick)
 
         var forgetPasswordText = view.findViewById<TextView>(R.id.forget_password)
         forgetPasswordText.setOnClickListener(onForgetPasswordClick)
@@ -72,11 +63,5 @@ class LoginFragment : BaseFragment() {
         val infoDialog = ErrorDialogFragment.newInstance("教室の先生に相談しましょう", "総合連絡先：XXX-XXXX-XXX")
         infoDialog.show(activity!!.supportFragmentManager, "info")
     }
-
-    // リストのテスト用
-    private val onListClick = View.OnClickListener {
-        replaceFragment(ListTestFragment())
-    }
-
 
 }

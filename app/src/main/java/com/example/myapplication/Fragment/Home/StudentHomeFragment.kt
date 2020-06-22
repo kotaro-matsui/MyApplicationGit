@@ -29,7 +29,7 @@ class StudentHomeFragment : BaseFragment() {
             val bitmap = barcodeEncoder.encodeBitmap(data, BarcodeFormat.QR_CODE, size, size)
             val imageQr = view.findViewById<ImageView>(R.id.qr_code)
             imageQr.setImageBitmap(bitmap)
-        } catch(e: Exception){
+        } catch(e: Exception) {
 
         }
 
@@ -48,10 +48,6 @@ class StudentHomeFragment : BaseFragment() {
 
         val listView = view.findViewById<ListView>(R.id.today_timetable)
 
-        // simple_list_item_1 は、 もともと用意されている定義済みのレイアウトファイルのID
-//        val arrayAdapter = ArrayAdapter(activity!!.applicationContext,
-//            android.R.layout.simple_list_item_1, texts)
-
         listView.adapter = TimetableAdapter(activity!!.applicationContext, times, booths, subjects, teachers)
     }
 
@@ -59,4 +55,5 @@ class StudentHomeFragment : BaseFragment() {
 //        val user = "student"
 //        replaceFragment(NextTimetableFragment.newInstance(user))
 //    }
+
 }

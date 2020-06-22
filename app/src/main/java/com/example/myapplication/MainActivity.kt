@@ -11,7 +11,6 @@ import com.example.myapplication.Fragment.Home.StudentHomeFragment
 import com.example.myapplication.Fragment.Home.TeacherHomeFragment
 import com.example.myapplication.Fragment.InitialSetting.InitialSettingFragment
 import com.example.myapplication.Fragment.Lesson.LessonFragment
-import com.example.myapplication.Fragment.ListTest.ListTestFragment
 import com.example.myapplication.Fragment.Login.LoginFragment
 import com.example.myapplication.Fragment.OCR.OCRFragment
 import com.example.myapplication.Model.ListObject
@@ -106,7 +105,6 @@ class MainActivity : AppCompatActivity() {
     private val onBackView = View.OnClickListener {
         when(this.mFragment){
             is InitialSettingFragment -> replaceFragment(LoginFragment())
-            is ListTestFragment -> replaceFragment(LoginFragment())
             is StudentHomeFragment -> replaceFragment(LoginFragment())
             is TeacherHomeFragment -> replaceFragment(LoginFragment())
             is LessonFragment  -> replaceFragment(TeacherHomeFragment())
