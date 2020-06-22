@@ -79,6 +79,16 @@
             android:layout_marginBottom="25dp"
             android:layout_gravity="center_horizontal"/>
 
+        <Button
+            android:id="@+id/menu_test"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:background="@drawable/white_shape_rounded_corners_10dp"
+            android:text="テスト"
+            android:textSize="20sp"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center_horizontal"/>
+
     </LinearLayout>
 
 </LinearLayout>

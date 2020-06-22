@@ -32,7 +32,7 @@ class OCRFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        changeTitle("OCRテスト")
+        changeHeaderTitle("OCRテスト")
         switchBackFragment(this)
         val view = inflater.inflate(R.layout.ocr_fragment, container, false)
         val imgTextView = view.findViewById<TextView>(R.id.img_text)

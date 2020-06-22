@@ -17,7 +17,7 @@ class TeacherHomeFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        changeTitle("HOME")
+        changeHeaderTitle("HOME")
         switchBackFragment(this)
         val view = inflater.inflate(R.layout.teacher_home_fragment, container, false)
         val firstLessonButton = view.findViewById<Button>(R.id.first_lesson_button)

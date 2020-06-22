@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.TextView
 import com.example.myapplication.Fragment.BaseFragment
 import com.example.myapplication.Fragment.Dialog.ErrorDialogFragment
+import com.example.myapplication.Fragment.Dialog.MenuDialogFragment
 import com.example.myapplication.Fragment.Home.StudentHomeFragment
 import com.example.myapplication.Fragment.Home.TeacherHomeFragment
 import com.example.myapplication.Fragment.InitialSetting.InitialSettingFragment
@@ -22,7 +23,7 @@ class LoginFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        changeTitle("ログイン")
+        changeHeaderTitle("ログイン")
         switchBackFragment(this)
         val view = inflater.inflate(R.layout.login_fragment, container, false)
         val initialSetting = view.findViewById<TextView>(R.id.initial_setting)
@@ -30,7 +31,11 @@ class LoginFragment : BaseFragment() {
         val loginButton = view.findViewById<Button>(R.id.login)
         loginButton.setOnClickListener(onLoginClick)
 
-        var forgetPasswordText = view.findViewById<TextView>(R.id.forget_password)
+        // テスト用
+        val menuTestButton = view.findViewById<Button>(R.id.menu_test)
+        menuTestButton.setOnClickListener(onMenuTestClick)
+
+        val forgetPasswordText = view.findViewById<TextView>(R.id.forget_password)
         forgetPasswordText.setOnClickListener(onForgetPasswordClick)
         return view
     }
@@ -57,6 +62,11 @@ class LoginFragment : BaseFragment() {
                 }
             }
         }
+    }
+
+    private val onMenuTestClick = View.OnClickListener {
+        val menuDialog = MenuDialogFragment()
+        menuDialog.show(activity!!.supportFragmentManager, "info")
     }
 
     private val onForgetPasswordClick = View.OnClickListener {

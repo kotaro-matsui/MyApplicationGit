@@ -17,9 +17,9 @@ open class BaseFragment: Fragment() {
         main.switchBackButton(fragment)
     }
 
-    fun changeTitle(headerTitle: String) {
+    fun changeHeaderTitle(headerTitle: String) {
         val main = activity as MainActivity
-        main.changeTitle(headerTitle)
+        main.changeHeaderTitle(headerTitle)
     }
 
 }

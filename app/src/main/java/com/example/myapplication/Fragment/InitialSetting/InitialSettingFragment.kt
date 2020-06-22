@@ -20,7 +20,7 @@ class InitialSettingFragment : BaseFragment() , ConfirmationDialogFragment.Confi
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        changeTitle("初回設定")
+        changeHeaderTitle("初回設定")
         switchBackFragment(this)
         val view = inflater.inflate(R.layout.initial_setting_fragment, container, false)
         val entryButton = view.findViewById<Button>(R.id.entry_button)

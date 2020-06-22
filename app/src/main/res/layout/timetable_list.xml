@@ -9,10 +9,8 @@
         android:id="@+id/time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="aiueo"
-        android:textSize="10sp"
-        android:textStyle="bold"
-        tools:ignore="SmallSp" />
+        android:textSize="12sp"
+        android:textStyle="bold"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,27 +21,28 @@
 
         <TextView
             android:id="@+id/booth"
-            android:layout_width="50dp"
+            android:layout_width="60dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="aiueo"
+            android:layout_weight="3"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/subject"
-            android:layout_width="50dp"
+            android:layout_width="80dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="4"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/teacher"
-            android:layout_width="150dp"
+            android:layout_width="200dp"
             android:layout_height="match_parent"
-            android:layout_weight="3"
+            android:layout_weight="10"
             android:textSize="18sp"
             android:textStyle="bold"/>
+
     </LinearLayout>
+
 </LinearLayout>

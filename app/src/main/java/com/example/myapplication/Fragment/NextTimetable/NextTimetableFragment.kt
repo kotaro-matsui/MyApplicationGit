@@ -28,7 +28,7 @@ class NextTimetableFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        changeTitle("次の授業")
+        changeHeaderTitle("次の授業")
         switchBackFragment(this)
         val view = inflater.inflate(R.layout.next_timetable_fragment, container, false)
         val HomeButton = view.findViewById<Button>(R.id.home_button)

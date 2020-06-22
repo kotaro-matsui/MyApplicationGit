@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     //　現在のフラグメントを格納する場所
     private var mFragment: Fragment? = null
+
     private var backButton: Button? = null
     private var headerTitle: TextView? = null
 
@@ -81,6 +82,10 @@ class MainActivity : AppCompatActivity() {
 //       realm.close()
 //   }
 
+    // 以下、ページ遷移に関するメソッド
+
+    // 画面遷移先を決定するメソッド
+    // 引数に設定したフラグメントを呼び出す
     fun replaceFragment(fragment: Fragment) {
         //　遷移先のフラグメントを格納
         this.mFragment = fragment
@@ -90,6 +95,9 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.commit()
     }
 
+    // 戻るボタンの表示/非表示を切り替えるメソッド
+    // 非表示にしたいフラグメントをif文に追加する
+
     fun switchBackButton(fragment: Fragment) {
         if(fragment is LoginFragment) {
             this.backButton?.visibility = View.INVISIBLE
@@ -98,9 +106,15 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun changeTitle(headerTitle: String) {
+    // ヘッダーのタイトルを変更するメソッド
+    // 引数に表示したい文字列を指定する
+
+    fun changeHeaderTitle(headerTitle: String) {
         this.headerTitle?.text = headerTitle
     }
+
+    // 戻るボタンをクリックしたときの処理内容
+    // 画面毎の遷移先を決定する
 
     private val onBackView = View.OnClickListener {
         when(this.mFragment){

@@ -37,7 +37,7 @@ class LessonFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        changeTitle("授業")
+        changeHeaderTitle("授業")
         switchBackFragment(this)
         val view = inflater.inflate(R.layout.lesson_fragment, container, false)
         val lessonNameTextView = view.findViewById<TextView>(R.id.lesson_name)
