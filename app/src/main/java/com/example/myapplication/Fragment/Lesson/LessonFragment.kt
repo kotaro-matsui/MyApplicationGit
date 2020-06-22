@@ -1,22 +1,24 @@
 package com.example.myapplication.Fragment.Lesson
 
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import com.example.myapplication.Context.OCRUtil
 import com.example.myapplication.Fragment.BaseFragment
-import com.example.myapplication.Fragment.Home.TeacherHomeFragment
-import com.example.myapplication.Fragment.Login.LoginFragment
+import com.example.myapplication.Fragment.Dialog.ProgressDialog
 import com.example.myapplication.Fragment.OCR.OCRFragment
 import com.example.myapplication.Model.ListObject
 import com.example.myapplication.R
-import com.google.zxing.integration.android.IntentIntegrator
 import io.realm.Realm
+import kotlin.concurrent.thread
 
 class LessonFragment : BaseFragment() {
     private lateinit var realm: Realm
+    private val progressDialog = ProgressDialog.newInstance("文字を読み取っています")
 
     var lessonName = ""
     var lessonNum = 1
@@ -35,8 +37,10 @@ class LessonFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        changeTitle("授業")
+        switchBackFragment(this)
         val view = inflater.inflate(R.layout.lesson_fragment, container, false)
-        var lessonNameTextView = view.findViewById<TextView>(R.id.lesson_name)
+        val lessonNameTextView = view.findViewById<TextView>(R.id.lesson_name)
         lessonNameTextView.text = lessonName
         realm = Realm.getDefaultInstance()
         val seatInfo = realm.where(ListObject::class.java).equalTo("id", lessonNum).findFirst()
@@ -52,19 +56,25 @@ class LessonFragment : BaseFragment() {
         val subject = seatInfo?.subject
         val subjectTextView = view.findViewById<TextView>(R.id.subject)
         subjectTextView.text = subject
-        var teacherHomeButton = view.findViewById<Button>(R.id.teacher_home_button)
-        teacherHomeButton.setOnClickListener(onTeacherHomeClick)
-        var qrCodeScannerButton = view.findViewById<Button>(R.id.start_qr_code_scanner)
+        val qrCodeScannerButton = view.findViewById<Button>(R.id.start_qr_code_scanner)
         qrCodeScannerButton.setOnClickListener(onQrCodeScannerButton)
         return view
     }
 
-    val onTeacherHomeClick = View.OnClickListener {
-        replaceFragment(TeacherHomeFragment())
-    }
+    private val onQrCodeScannerButton = View.OnClickListener {
 
-    val onQrCodeScannerButton = View.OnClickListener {
-        replaceFragment(OCRFragment())
+        var ocrUtil: OCRUtil
+
+        progressDialog.show(activity!!.supportFragmentManager,"TAG")
+
+        thread {
+            val bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.test)
+            ocrUtil = OCRUtil(activity!!.applicationContext)
+            val copyText = ocrUtil.getString(activity!!.applicationContext, bitmap, "jpnnew")
+            progressDialog.dismiss()
+            replaceFragment(OCRFragment.newInstance(copyText))
+        }
+
     }
 
 }

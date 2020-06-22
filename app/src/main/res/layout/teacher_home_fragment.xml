@@ -3,27 +3,13 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="講師用HOME"
-        android:textSize="30dp"
-        android:layout_gravity="center_horizontal"/>
-
-    <Button
-        android:id="@+id/logout"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:text="ログアウト"
-        android:layout_gravity="center_horizontal"/>
-
     <Button
     android:id="@+id/first_lesson_button"
     android:layout_width="200dp"
     android:layout_height="50dp"
     android:background="@color/colorPrimary"
     android:text="１コマ目"
-    android:textSize="30dp"
+    android:textSize="30sp"
     android:textColor="@color/white"
     android:layout_marginTop="20dp"
     android:layout_gravity="center_horizontal"/>
@@ -34,7 +20,7 @@
         android:layout_height="50dp"
         android:background="@color/colorPrimary"
         android:text="２コマ目"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textColor="@color/white"
         android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal"/>
@@ -45,7 +31,7 @@
         android:layout_height="50dp"
         android:background="@color/colorPrimary"
         android:text="３コマ目"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textColor="@color/white"
         android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal"/>
@@ -56,7 +42,7 @@
         android:layout_height="50dp"
         android:background="@color/colorPrimary"
         android:text="４コマ目"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textColor="@color/white"
         android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal"/>
