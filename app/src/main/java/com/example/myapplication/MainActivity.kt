@@ -1,13 +1,15 @@
 package com.example.myapplication
 
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.fragment.app.Fragment
+import com.example.myapplication.Fragment.Dialog.MenuDialogFragment
 import com.example.myapplication.Fragment.Home.StudentHomeFragment
 import com.example.myapplication.Fragment.Home.TeacherHomeFragment
 import com.example.myapplication.Fragment.InitialSetting.InitialSettingFragment
@@ -30,16 +32,17 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        setContentView(R.layout.activity_main)
+
         //keyを設定
-        val ids =  arrayOf(1, 2, 3, 4)
+        val ids =  arrayOf(1, 2, 3, 4,5,6,7)
         //initしたインスタンスをとってくる
         realm = Realm.getDefaultInstance()
-
         // トランザクションして登録
         try {
             realm.executeTransaction { realm ->
                 val obj1 = realm.createObject(ListObject::class.java, ids[0])
-                obj1.booth = "A1"
+                obj1.booth = "A10"
                 obj1.teacher = "松井"
                 obj1.student = "実原"
                 obj1.subject = "国語"
@@ -58,14 +61,18 @@ class MainActivity : AppCompatActivity() {
                 obj4.teacher = "松井"
                 obj4.student = "渕田"
                 obj4.subject = "物理"
+                val obj5 = realm.createObject(ListObject::class.java, ids[4])
+                obj5.booth = "A2"
+                obj5.teacher = "明石"
+                obj5.student = "渕田"
+                obj5.subject = "物理"
+
             }
         } catch (e: Exception) {
-
+            println("exceptionエラー:" + e.message)
         } catch (r: RuntimeException) {
-
+            println("runtime exceptionエラー:" + r.message)
         }
-
-        setContentView(R.layout.activity_main)
 
         val backButton = findViewById<Button>(R.id.back_fragment)
         backButton.visibility = View.INVISIBLE
@@ -83,12 +90,11 @@ class MainActivity : AppCompatActivity() {
         replaceFragment(LoginFragment())
     }
 
-//    override fun onDestroy() {
-//       super.onDestroy()
+    override fun onDestroy() {
+       super.onDestroy()
+       realm.close()
+   }
 
-//       realm.close()
-//   }
-    
     // 以下、ページ遷移に関するメソッド
 
     // 画面遷移先を決定するメソッド
@@ -143,7 +149,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("RtlHardcoded")
     private val onMenuView = View.OnClickListener {
+        MenuDialogFragment(Gravity.LEFT or Gravity.TOP, 0f, 0f).show(supportFragmentManager, "info")
         //スライドメニューを表示する処理
     }
+
 }

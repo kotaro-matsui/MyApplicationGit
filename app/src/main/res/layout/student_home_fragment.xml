@@ -17,7 +17,16 @@
         android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal"/>
 
-<!--  リストビュー　リサイクラービュー　◎アダプター　内２つは確実に使用  -->
+    <Button
+        android:id="@+id/next_timetable_button"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:background="@color/colorPrimary"
+        android:text="次回の時間割"
+        android:textColor="@color/white"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,17 +57,5 @@
             android:layout_marginBottom="25dp" />
 
     </LinearLayout>
-
-
-
-    <!--    <Button-->
-<!--    android:id="@+id/next_timetable_button"-->
-<!--    android:layout_width="150dp"-->
-<!--    android:layout_height="40dp"-->
-<!--    android:background="@color/colorPrimary"-->
-<!--    android:text="次回の時間割"-->
-<!--    android:textColor="@color/white"-->
-<!--    android:layout_marginTop="200dp"-->
-<!--    android:layout_gravity="center_horizontal"/>-->
 
 </LinearLayout>

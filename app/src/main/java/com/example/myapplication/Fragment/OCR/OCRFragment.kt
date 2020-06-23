@@ -1,18 +1,13 @@
 package com.example.myapplication.Fragment.OCR
 
-import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ProgressBar
 import android.widget.TextView
-import com.example.myapplication.Context.OCRUtil
 import com.example.myapplication.Fragment.BaseFragment
 import com.example.myapplication.Fragment.Home.TeacherHomeFragment
-import com.example.myapplication.Fragment.Lesson.LessonFragment
-import com.example.myapplication.Fragment.Login.LoginFragment
 import com.example.myapplication.R
 
 class OCRFragment : BaseFragment() {
@@ -33,7 +28,7 @@ class OCRFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
         changeHeaderTitle("OCRテスト")
-        switchBackFragment(this)
+        switchBackButton(this)
         val view = inflater.inflate(R.layout.ocr_fragment, container, false)
         val imgTextView = view.findViewById<TextView>(R.id.img_text)
         imgTextView.text = this.copyText

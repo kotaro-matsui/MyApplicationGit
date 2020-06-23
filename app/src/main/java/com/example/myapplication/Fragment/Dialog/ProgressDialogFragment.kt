@@ -7,11 +7,11 @@ import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.example.myapplication.R
 
-class ProgressDialog : DialogFragment() {
+class ProgressDialogFragment : DialogFragment() {
 
     companion object {
-        fun newInstance(message: String): ProgressDialog {
-            val instance = ProgressDialog()
+        fun newInstance(message: String): ProgressDialogFragment {
+            val instance = ProgressDialogFragment()
             val arguments = Bundle()
             arguments.putString("message", message)
             instance.arguments = arguments

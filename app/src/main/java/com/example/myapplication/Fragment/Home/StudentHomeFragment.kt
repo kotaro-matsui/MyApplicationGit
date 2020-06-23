@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.ListView
 import com.example.myapplication.Adapter.TimetableAdapter
 import com.example.myapplication.Fragment.BaseFragment
+import com.example.myapplication.Fragment.NextTimetable.NextTimetableFragment
 import com.example.myapplication.R
 import com.google.zxing.BarcodeFormat
 import com.journeyapps.barcodescanner.BarcodeEncoder
@@ -20,8 +22,8 @@ class StudentHomeFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
         changeHeaderTitle("HOME")
-        switchBackFragment(this)
-        switchMenuFragment(this)
+        switchBackButton(this)
+        switchMenuButton(this)
         val view = inflater.inflate(R.layout.student_home_fragment, container, false)
 
         // QRコードの作成
@@ -37,8 +39,9 @@ class StudentHomeFragment : BaseFragment() {
 
         }
 
-//        val nextTimetableButton = view.findViewById<Button>(R.id.next_timetable_button)
-//        nextTimetableButton.setOnClickListener(onNextTimetableClick)
+        val nextTimetableButton = view.findViewById<Button>(R.id.next_timetable_button)
+        nextTimetableButton.setOnClickListener(onNextTimetableClick)
+
         return view
     }
 
@@ -58,9 +61,9 @@ class StudentHomeFragment : BaseFragment() {
         listView.adapter = TimetableAdapter(activity!!.applicationContext, times, booths, subjects, teachers)
     }
 
-//    private val onNextTimetableClick = View.OnClickListener {
-//        val user = "student"
-//        replaceFragment(NextTimetableFragment.newInstance(user))
-//    }
+    private val onNextTimetableClick = View.OnClickListener {
+        val user = "student"
+        replaceFragment(NextTimetableFragment.newInstance(user))
+    }
 
 }

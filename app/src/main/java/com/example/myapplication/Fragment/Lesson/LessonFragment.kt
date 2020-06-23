@@ -9,7 +9,7 @@ import android.widget.Button
 import android.widget.TextView
 import com.example.myapplication.Context.OCRUtil
 import com.example.myapplication.Fragment.BaseFragment
-import com.example.myapplication.Fragment.Dialog.ProgressDialog
+import com.example.myapplication.Fragment.Dialog.ProgressDialogFragment
 import com.example.myapplication.Fragment.OCR.OCRFragment
 import com.example.myapplication.Model.ListObject
 import com.example.myapplication.R
@@ -18,7 +18,7 @@ import kotlin.concurrent.thread
 
 class LessonFragment : BaseFragment() {
     private lateinit var realm: Realm
-    private val progressDialog = ProgressDialog.newInstance("文字を読み取っています")
+    private val progressDialog = ProgressDialogFragment.newInstance("文字を読み取っています")
 
     var lessonName = ""
     var lessonNum = 1
@@ -38,11 +38,12 @@ class LessonFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
         changeHeaderTitle("授業")
-        switchBackFragment(this)
+        switchBackButton(this)
         val view = inflater.inflate(R.layout.lesson_fragment, container, false)
         val lessonNameTextView = view.findViewById<TextView>(R.id.lesson_name)
         lessonNameTextView.text = lessonName
         realm = Realm.getDefaultInstance()
+        //ここでrealmの中身が無い場合は各コマへのボタンをグレーアウトにする処理にする
         val seatInfo = realm.where(ListObject::class.java).equalTo("id", lessonNum).findFirst()
         val booth = seatInfo?.booth
         val boothTextView = view.findViewById<TextView>(R.id.booth)

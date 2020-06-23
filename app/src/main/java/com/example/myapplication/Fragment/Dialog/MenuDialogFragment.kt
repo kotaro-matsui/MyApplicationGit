@@ -24,7 +24,7 @@ class MenuDialogFragment(private val gravity: Int,
         )
         dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
-        dialog.setContentView(com.example.myapplication.R.layout.menu_dialog_fragment)
+        dialog.setContentView(com.example.myapplication.R.layout.menu_main)
         return dialog
     }
 

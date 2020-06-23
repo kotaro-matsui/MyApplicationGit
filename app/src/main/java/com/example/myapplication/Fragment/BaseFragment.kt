@@ -12,12 +12,12 @@ open class BaseFragment: Fragment() {
         main.replaceFragment(fragment)
     }
 
-    fun switchBackFragment(fragment: Fragment) {
+    fun switchBackButton(fragment: Fragment) {
         val main = activity as MainActivity
         main.switchBackButton(fragment)
     }
 
-    fun switchMenuFragment(fragment: Fragment){
+    fun switchMenuButton(fragment: Fragment){
         val main = activity as MainActivity
         main.switchMenuButton(fragment)
     }

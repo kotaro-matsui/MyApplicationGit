@@ -48,6 +48,39 @@
         android:layout_gravity="center_horizontal"/>
 
     <Button
+        android:id="@+id/fifth_lesson_button"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        android:text="５コマ目"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:id="@+id/sixth_lesson_button"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        android:text="６コマ目"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:id="@+id/seventh_lesson_button"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        android:text="７コマ目"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"/>
+
+<!--    <Button
         android:id="@+id/next_timetable_button"
         android:layout_width="150dp"
         android:layout_height="40dp"
@@ -55,6 +88,6 @@
         android:text="次回の時間割"
         android:textColor="@color/white"
         android:layout_marginTop="50dp"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"/>-->
 
 </LinearLayout>
